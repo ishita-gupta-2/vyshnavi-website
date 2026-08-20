@@ -1,34 +1,33 @@
 function ContactSection() {
   return (
     <section className="contact" id="contact">
-      <p className="eyebrow">GET IN TOUCH</p>
+      <div className="contact-intro">
+        <p className="eyebrow">PERSONAL ASSISTANCE</p>
+        <h2>Find your next<br /><em>favourite shirt.</em></h2>
+      </div>
 
-      <h2>Interested in our collection?</h2>
+      <div className="contact-card">
+        <p>
+          Tell us which piece caught your eye. We’ll help with current sizes,
+          colours, availability, and pricing.
+        </p>
 
-      <p>
-        Contact us for product details, availability, sizes and pricing.
-      </p>
+        <div className="contact-links">
+          <a
+            className="primary-button"
+            href="https://wa.me/919930148112?text=Hi%2C%20I%27d%20like%20help%20choosing%20a%20shirt%20from%20your%20collection."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Start on WhatsApp <span aria-hidden="true">↗</span>
+          </a>
 
-      <div className="contact-links">
-        <a
-          href="https://wa.me/919930148112"
-          target="_blank"
-          rel="noreferrer"
-        >
-          WhatsApp ↗
-        </a>
+          <a className="text-link" href="tel:+919930148112">
+            Call +91 99301 48112
+          </a>
+        </div>
 
-        <a href="#">
-          Instagram ↗
-        </a>
-
-        <a href="#">
-          LinkedIn ↗
-        </a>
-
-        <a href="mailto:your@email.com">
-          Email ↗
-        </a>
+        <p className="contact-note">Direct, personal assistance. No forms or waiting lists.</p>
       </div>
     </section>
   );
