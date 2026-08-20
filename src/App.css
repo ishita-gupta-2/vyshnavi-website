@@ -1,0 +1,872 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  background: #fdfdfc;
+  color: #171717;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background: #fdfdfc;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  height: 86px;
+
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(253, 253, 252, 0.82);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.035);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  text-decoration: none;
+}
+
+.brand img {
+  width: 155px;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 38px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #666;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  letter-spacing: 0.01em;
+
+  transition:
+    color 0.25s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #111;
+
+  transition:
+    width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #111;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 150px 24px 100px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      #ffffff 0%,
+      #fafaf8 55%,
+      #f5f5f2 100%
+    );
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  color: #888;
+
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(58px, 8vw, 108px);
+
+  line-height: 0.94;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 600;
+
+  color: #111;
+}
+
+.hero-description {
+  max-width: 500px;
+
+  margin: 38px auto 34px;
+
+  color: #777;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.01em;
+}
+
+.hero-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 14px 25px;
+
+  background: #111;
+
+  color: #fff;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #222;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   COLLECTION
+========================================= */
+
+.collection {
+  padding: 170px 6% 180px;
+
+  background: #fdfdfc;
+}
+
+.section-heading {
+  max-width: 720px;
+
+  margin: 0 auto 90px;
+
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 600;
+
+  color: #151515;
+}
+
+.section-description {
+  margin: 25px auto 0;
+
+  color: #888;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SHIRT GRID
+========================================= */
+
+.shirt-grid {
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 65px 24px;
+}
+
+.shirt-card {
+  min-width: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.shirt-card:hover {
+  transform: translateY(-7px);
+}
+
+
+/* =========================================
+   SHIRT IMAGE
+========================================= */
+
+.shirt-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.78;
+
+  overflow: hidden;
+
+  background: #f2f2ef;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.shirt-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+}
+
+.shirt-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  padding: 12px;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.shirt-card:hover .shirt-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================
+   SHIRT INFO
+========================================= */
+
+.shirt-card-info {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 17px 2px 0;
+}
+
+.shirt-card-info h3 {
+  margin: 0;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+  color: #222;
+}
+
+.shirt-card-info span {
+  color: #999;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.shirt-card:hover .shirt-card-info span {
+  color: #444;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 190px 24px;
+
+  text-align: center;
+}
+
+.about h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 600;
+
+  color: #151515;
+}
+
+.about > p:last-child {
+  max-width: 570px;
+
+  margin: 38px auto 0;
+
+  color: #777;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+  padding: 170px 24px;
+
+  text-align: center;
+
+  background: #f1f1ed;
+}
+
+.contact h2 {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 600;
+}
+
+.contact > p:not(.eyebrow) {
+  max-width: 500px;
+
+  margin: 30px auto 45px;
+
+  color: #777;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.contact-links a {
+  padding: 12px 21px;
+
+  color: #333;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-links a:hover {
+  background: #111;
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SHIRT DETAILS
+========================================= */
+
+.shirt-details {
+  min-height: 100vh;
+
+  padding: 145px 6% 120px;
+
+  background: #fdfdfc;
+}
+
+.back-button {
+  border: none;
+
+  background: transparent;
+
+  padding: 0;
+
+  color: #777;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  margin-bottom: 55px;
+
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #111;
+}
+
+.shirt-details-content {
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.85fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.shirt-details-image {
+  background: #f1f1ee;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.shirt-details-image img {
+  width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  padding: 25px;
+}
+
+.shirt-details-info h1 {
+  margin: 0 0 28px;
+
+  font-size: clamp(50px, 6vw, 80px);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.06em;
+
+  font-weight: 600;
+}
+
+.shirt-details-info > p:not(.eyebrow) {
+  max-width: 420px;
+
+  margin: 0 0 38px;
+
+  color: #777;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  padding: 42px 6%;
+
+  text-align: center;
+
+  color: #aaa;
+
+  font-size: 11px;
+
+  background: #fdfdfc;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-brand {
+  margin-bottom: 9px;
+
+  color: #555;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .shirt-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 55px 20px;
+  }
+
+  .shirt-details-content {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 55px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    height: 72px;
+
+    padding: 0 20px;
+  }
+
+  .brand img {
+    width: 125px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: 90vh;
+
+    padding: 120px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 51px;
+
+    letter-spacing: -0.06em;
+  }
+
+  .hero-description {
+    max-width: 330px;
+
+    margin: 30px auto;
+
+    font-size: 14px;
+  }
+
+
+  /* COLLECTION */
+
+  .collection {
+    padding: 110px 20px 120px;
+  }
+
+  .section-heading {
+    margin-bottom: 55px;
+  }
+
+  .section-heading h2 {
+    font-size: 42px;
+  }
+
+  .shirt-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 42px 12px;
+  }
+
+  .shirt-image {
+    border-radius: 13px;
+
+    aspect-ratio: 0.78;
+  }
+
+  .shirt-image img {
+    padding: 5px;
+  }
+
+  .shirt-card-info {
+    display: block;
+
+    padding-top: 12px;
+  }
+
+  .shirt-card-info h3 {
+    font-size: 12px;
+  }
+
+  .shirt-card-info span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+  }
+
+
+  /* ABOUT */
+
+  .about {
+    padding: 120px 20px;
+  }
+
+  .about h2 {
+    font-size: 42px;
+  }
+
+  .about > p:last-child {
+    font-size: 14px;
+  }
+
+
+  /* CONTACT */
+
+  .contact {
+    padding: 120px 20px;
+  }
+
+  .contact h2 {
+    font-size: 42px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+
+    max-width: 260px;
+
+    margin: 0 auto;
+  }
+
+  .contact-links a {
+    width: 100%;
+  }
+
+
+  /* DETAILS */
+
+  .shirt-details {
+    padding: 105px 20px 80px;
+  }
+
+  .shirt-details-content {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .shirt-details-image {
+    border-radius: 16px;
+  }
+
+  .shirt-details-image img {
+    padding: 12px;
+  }
+
+  .shirt-details-info {
+    text-align: center;
+  }
+
+  .shirt-details-info h1 {
+    font-size: 50px;
+  }
+
+  .shirt-details-info > p:not(.eyebrow) {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    padding: 35px 20px;
+  }
+}
