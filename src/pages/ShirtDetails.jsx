@@ -31,7 +31,7 @@ function ShirtDetails({ shirt, onBack }) {
 
         <div className="shirt-details-info">
           <p className="eyebrow">
-            {shirt.category} · {shirt.code}
+            {shirt.occasion} · {shirt.category} · {shirt.code}
           </p>
 
           <h1>{shirt.name}</h1>
