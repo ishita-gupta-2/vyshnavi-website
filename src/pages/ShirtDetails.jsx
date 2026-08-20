@@ -4,43 +4,32 @@ function ShirtDetails({ shirt, onBack }) {
   }
 
   const whatsappMessage = encodeURIComponent(
-    `Hi, I'm interested in ${shirt.name}. Could you please share more details?`
+    `Hi, I'm interested in ${shirt.name}. Could you share the available sizes, colours and pricing?`
   );
 
   return (
-    <section className="shirt-details">
-      <button
-        className="back-button"
-        onClick={onBack}
-        type="button"
-      >
-        <span aria-hidden="true">←</span> Back to the edit
+    <section className="shirt-details" aria-labelledby="shirt-detail-title">
+      <button className="back-button" onClick={onBack} type="button">
+        <span aria-hidden="true">←</span> Back to collection
       </button>
 
       <div className="shirt-details-content">
         <div className="shirt-details-image">
           <img
             src={shirt.image}
-            alt={shirt.name}
+            alt={`Vyshnavi Enterprises ${shirt.name}`}
             width="1200"
             height="1600"
             decoding="async"
           />
-          <span className="details-code">{shirt.code}</span>
         </div>
 
         <div className="shirt-details-info">
-          <p className="eyebrow">
-            {shirt.occasion} · {shirt.category} · {shirt.code}
+          <p className="eyebrow">VYSHNAVI ENTERPRISES</p>
+          <h1 id="shirt-detail-title">{shirt.name}</h1>
+          <p className="detail-message">
+            Contact us for available sizes, colours and pricing.
           </p>
-
-          <h1>{shirt.name}</h1>
-
-          <p>{shirt.description}</p>
-
-          <ul className="product-details">
-            {shirt.details.map((detail) => <li key={detail}>{detail}</li>)}
-          </ul>
 
           <a
             href={`https://wa.me/919930148112?text=${whatsappMessage}`}
@@ -48,10 +37,12 @@ function ShirtDetails({ shirt, onBack }) {
             rel="noreferrer"
             className="primary-button"
           >
-            Enquire on WhatsApp <span aria-hidden="true">↗</span>
+            Enquire on WhatsApp <span aria-hidden="true">→</span>
           </a>
 
-          <p className="enquiry-note">Pricing, colours, and current availability are confirmed personally.</p>
+          <p className="enquiry-note">
+            Availability is confirmed personally by the Vyshnavi Enterprises team.
+          </p>
         </div>
       </div>
     </section>

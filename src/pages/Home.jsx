@@ -6,20 +6,16 @@ import detailShirt from "../assets/shirts/shirt-02.jpg";
 function Home({ onSelectShirt }) {
   return (
     <>
-      <section className="hero">
+      <section className="hero" aria-labelledby="hero-title">
         <div className="hero-content">
-          <p className="eyebrow">
-            A FOCUSED EDIT · CURATED MENSWEAR
-          </p>
-
-          <h1>
+          <p className="eyebrow">A FOCUSED EDIT · VYSHNAVI ENTERPRISES</p>
+          <h1 id="hero-title">
             Shirts for a life
             <em> well dressed.</em>
           </h1>
-
           <p className="hero-description">
-            A focused collection of everyday shirts selected for comfort,
-            character, and quiet confidence.
+            A focused collection of everyday shirts for work, weekends and
+            every occasion.
           </p>
 
           <div className="hero-actions">
@@ -32,51 +28,33 @@ function Home({ onSelectShirt }) {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Featured Vyshnavi shirts">
+        <div className="hero-visual" aria-label="Featured Vyshnavi Enterprises shirts">
           <div className="hero-image hero-image-main">
             <img
               src={heroShirt}
-              alt="The Signature shirt from Vyshnavi Enterprises"
+              alt="Vyshnavi Enterprises SHIRT-08"
               width="1200"
               height="1600"
+              fetchPriority="high"
               decoding="async"
             />
           </div>
           <div className="hero-image hero-image-detail">
             <img
               src={detailShirt}
-              alt="The Regent shirt from Vyshnavi Enterprises"
+              alt="Vyshnavi Enterprises SHIRT-02"
               width="1200"
               height="1600"
               decoding="async"
             />
           </div>
           <p className="hero-note">
-            The current edit<br />Curated with intention
+            The complete edit<br />Thirty-one shirts
           </p>
         </div>
       </section>
 
       <Collection onSelectShirt={onSelectShirt} />
-
-      <section className="about" id="about">
-        <div className="about-heading">
-          <p className="eyebrow">OUR POINT OF VIEW</p>
-          <h2>Less noise.<br /><em>Better choices.</em></h2>
-        </div>
-
-        <div className="about-copy">
-          <p>
-            Vyshnavi Enterprises brings together a concise collection of shirts
-            with a focus on versatility, comfort, and enduring style.
-          </p>
-          <div className="about-principles">
-            <span>01 / Curated selection</span>
-            <span>02 / Personal assistance</span>
-            <span>03 / Everyday versatility</span>
-          </div>
-        </div>
-      </section>
 
       <ContactSection />
     </>
