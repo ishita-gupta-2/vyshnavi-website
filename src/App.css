@@ -417,39 +417,12 @@ img {
   transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.shirt-card-info {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 17px;
-}
-
-.shirt-card-info h3 {
-  margin: 0;
-  font-family: var(--display);
-  font-size: 1.18rem;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-}
-
-.shirt-card-info > span {
-  color: var(--faint);
-  font-size: 0.7rem;
-  white-space: nowrap;
-  transition: color 200ms ease;
-}
-
 .shirt-card:hover {
   translate: 0 -5px;
 }
 
 .shirt-card:hover .shirt-image img {
   transform: scale(1.025);
-}
-
-.shirt-card:hover .shirt-card-info > span {
-  color: var(--ink);
 }
 
 .contact {
@@ -919,21 +892,6 @@ footer p {
 
   .shirt-image img {
     padding: 8px;
-  }
-
-  .shirt-card-info {
-    display: block;
-    padding-top: 11px;
-  }
-
-  .shirt-card-info h3 {
-    font-size: 1rem;
-  }
-
-  .shirt-card-info > span {
-    display: inline-block;
-    margin-top: 7px;
-    font-size: 0.62rem;
   }
 
   .shirt-card:hover {

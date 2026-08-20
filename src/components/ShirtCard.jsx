@@ -21,11 +21,6 @@ function ShirtCard({ shirt, onClick, eager = false }) {
             decoding="async"
           />
         </div>
-
-        <div className="shirt-card-info">
-          <h3>{shirt.name}</h3>
-          <span>View details <span aria-hidden="true">→</span></span>
-        </div>
       </a>
     </article>
   );
