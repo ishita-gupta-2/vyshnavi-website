@@ -871,10 +871,6 @@ footer p {
     padding: 0;
   }
 
-  .hero-image {
-    aspect-ratio: auto;
-  }
-
   .hero-image-main {
     right: 0;
     left: 0;
