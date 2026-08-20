@@ -51,7 +51,9 @@ function Home({ onSelectShirt }) {
               decoding="async"
             />
           </div>
-          <p className="hero-note">The 2026 Edit<br />01 — 08</p>
+          <p className="hero-note">
+            The current edit<br />Curated with intention
+          </p>
         </div>
       </section>
 
