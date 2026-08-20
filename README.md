@@ -10,30 +10,32 @@ A responsive editorial storefront for the Vyshnavi Enterprises shirt collection.
 
 ## Adding shirts
 
-The collection is generated from `src/data/shirts.js`, so it can grow whenever
-new styles are ready. The storefront does not display a fixed collection count.
+The collection automatically includes every supported image in
+`src/assets/shirts/`. The storefront does not display a fixed collection count.
 
-1. Add the product photo to `src/assets/shirts/` using a unique filename, such
-   as `shirt-09.jpg`.
-2. Import the image near the top of `src/data/shirts.js`:
+1. Add the product photos to `src/assets/shirts/` using unique, sequential
+   filenames such as `shirt-09.jpg`, `shirt-10.jpg`, and `shirt-11.jpg`.
+2. Deploy the update. The new shirts automatically appear in the collection and
+   receive their own product links.
+
+JPG, JPEG, PNG, WebP, and AVIF images are supported. Sequential `shirt-##`
+filenames automatically generate matching names and product codes. For example,
+`shirt-09.jpg` appears as `Style 09` with code `VE-09`.
+
+### Customizing shirt information
+
+Adding metadata is optional. To replace the generated name, category,
+description, or details, add an entry to `shirtMetadata` in
+`src/data/shirts.js`. Use the image filename without its extension as the key:
 
    ```js
-   import shirt09 from "../assets/shirts/shirt-09.jpg";
-   ```
-
-3. Add a new item at the end of the exported `shirts` array:
-
-   ```js
-   {
-     id: "shirt-09",
+   "shirt-09": {
      name: "The New Style",
      code: "VE-09",
      category: "Everyday tailoring",
      description: "A short description of the shirt.",
      details: ["First detail", "Second detail", "Multiple sizes available"],
-     image: shirt09,
    },
    ```
 
-Keep each `id`, `code`, and image import unique. The new shirt then appears in
-the collection grid and gets its own shareable product URL automatically.
+Keep every filename and custom product code unique.
