@@ -24,7 +24,7 @@ function ShirtCard({ shirt, onClick }) {
 
       <div className="shirt-card-info">
         <div>
-          <p>{shirt.category}</p>
+          <p>{shirt.occasion} · {shirt.category}</p>
           <h3>{shirt.name}</h3>
         </div>
         <span aria-hidden="true">View</span>
