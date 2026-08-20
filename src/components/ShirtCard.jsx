@@ -1,4 +1,4 @@
-function ShirtCard({ shirt, onClick }) {
+function ShirtCard({ shirt, onClick, eager = false }) {
   return (
     <article className="shirt-card">
       <a
@@ -8,27 +8,24 @@ function ShirtCard({ shirt, onClick }) {
           event.preventDefault();
           onClick();
         }}
-        aria-label={`View ${shirt.name}`}
+        aria-label={`View details for ${shirt.name}`}
       >
-      <div className="shirt-image">
-        <img
-          src={shirt.image}
-          alt={shirt.name}
-          width="1200"
-          height="1600"
-          loading="lazy"
-          decoding="async"
-        />
-        <span className="shirt-code">{shirt.code}</span>
-      </div>
-
-      <div className="shirt-card-info">
-        <div>
-          <p>{shirt.occasion} · {shirt.category}</p>
-          <h3>{shirt.name}</h3>
+        <div className="shirt-image">
+          <img
+            src={shirt.image}
+            alt={`Vyshnavi Enterprises ${shirt.name}`}
+            width="1200"
+            height="1600"
+            loading={eager ? "eager" : "lazy"}
+            fetchPriority={eager ? "high" : "auto"}
+            decoding="async"
+          />
         </div>
-        <span aria-hidden="true">View</span>
-      </div>
+
+        <div className="shirt-card-info">
+          <h3>{shirt.name}</h3>
+          <span>View details <span aria-hidden="true">→</span></span>
+        </div>
       </a>
     </article>
   );

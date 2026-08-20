@@ -1,33 +1,40 @@
+const contactOptions = [
+  { label: "Instagram", note: "Details coming soon" },
+  { label: "Email", note: "Details coming soon" },
+  { label: "LinkedIn", note: "Details coming soon" },
+];
+
 function ContactSection() {
   return (
     <section className="contact" id="contact">
-      <div className="contact-intro">
-        <p className="eyebrow">PERSONAL ASSISTANCE</p>
-        <h2>Find your next<br /><em>favourite shirt.</em></h2>
+      <div className="contact-heading">
+        <p className="eyebrow">ENQUIRIES</p>
+        <h2>Interested in<br />our collection?</h2>
       </div>
 
-      <div className="contact-card">
-        <p>
-          Tell us which piece caught your eye. We’ll help with current sizes,
-          colours, availability, and pricing.
+      <div className="contact-content">
+        <p className="contact-description">
+          Contact us for sizes, colours, pricing and availability.
         </p>
 
-        <div className="contact-links">
-          <a
-            className="primary-button"
-            href="https://wa.me/919930148112?text=Hi%2C%20I%27d%20like%20help%20choosing%20a%20shirt%20from%20your%20collection."
-            target="_blank"
-            rel="noreferrer"
-          >
-            Start on WhatsApp <span aria-hidden="true">↗</span>
-          </a>
+        <a
+          className="whatsapp-button"
+          href="https://wa.me/919930148112?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Vyshnavi%20Enterprises%20shirt%20collection."
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>WhatsApp</span>
+          <strong>Enquire on WhatsApp <span aria-hidden="true">→</span></strong>
+        </a>
 
-          <a className="text-link" href="tel:+919930148112">
-            Call +91 99301 48112
-          </a>
+        <div className="contact-options" aria-label="Additional contact options">
+          {contactOptions.map((option) => (
+            <div className="contact-option" key={option.label}>
+              <span>{option.label}</span>
+              <small>{option.note}</small>
+            </div>
+          ))}
         </div>
-
-        <p className="contact-note">Direct, personal assistance. No forms or waiting lists.</p>
       </div>
     </section>
   );

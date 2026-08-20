@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     document.title = selectedShirt
       ? `${selectedShirt.name} | Vyshnavi Enterprises`
-      : "Vyshnavi Enterprises | Curated Shirts";
+      : "Vyshnavi Enterprises | Shirts";
   }, [selectedShirt]);
 
   const selectShirt = (shirt) => {
@@ -70,7 +70,7 @@ function App() {
         rel="noreferrer"
         aria-label="Enquire about the collection on WhatsApp"
       >
-        <span>Enquire</span>
+        <span>WhatsApp</span>
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M5 12h14M14 7l5 5-5 5" />
         </svg>
