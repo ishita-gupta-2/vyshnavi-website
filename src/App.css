@@ -839,6 +839,7 @@ footer p {
     display: flex;
     min-height: auto;
     flex-direction: column;
+    align-items: stretch;
     gap: 0;
     padding: 84px 18px 0;
   }
@@ -866,6 +867,7 @@ footer p {
   }
 
   .hero-visual {
+    width: 100%;
     min-height: 350px;
     margin: 0 0 48px;
     padding: 0;
