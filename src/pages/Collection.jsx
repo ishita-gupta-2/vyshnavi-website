@@ -7,7 +7,7 @@ function Collection({ onSelectShirt }) {
       <div className="section-heading">
         <p className="eyebrow">THE CURRENT EDIT</p>
 
-        <h2>Eight shirts. Endless rotation.</h2>
+        <h2>A considered collection. Endless rotation.</h2>
 
         <p className="section-description">
           A focused selection of versatile shirts, chosen for comfort, character,
