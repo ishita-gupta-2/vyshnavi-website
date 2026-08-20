@@ -285,6 +285,17 @@ img {
   animation: reveal-image 900ms 160ms both cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  left: 8%;
+  aspect-ratio: 626 / 417;
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  transform: translateY(calc(-50% + 18px));
+}
+
 .hero-image {
   position: absolute;
   overflow: hidden;
@@ -300,24 +311,45 @@ img {
 }
 
 .hero-image-main {
-  inset: 0 0 4% 12%;
+  top: 50%;
+  right: 2%;
+  left: 4%;
+  aspect-ratio: 626 / 417;
+  box-shadow: 0 28px 70px rgba(23, 23, 23, 0.12);
+  transform: translateY(-50%);
 }
 
 .hero-image-main img {
+  object-position: center;
   transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-image-main::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  pointer-events: none;
 }
 
 .hero-visual:hover .hero-image-main img {
   transform: scale(1.025);
 }
 
-.hero-image-detail {
-  left: -7%;
-  bottom: -2%;
-  width: 30%;
-  aspect-ratio: 0.75;
-  border: 10px solid var(--paper);
-  box-shadow: 0 18px 45px rgba(23, 23, 23, 0.12);
+.hero-image-label {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(23, 23, 23, 0.68);
+  color: #ffffff;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .hero-note {
@@ -834,8 +866,8 @@ footer p {
   }
 
   .hero-visual {
-    min-height: 510px;
-    margin: 10px 0 54px;
+    min-height: 350px;
+    margin: 0 0 48px;
     padding: 0;
   }
 
@@ -844,14 +876,25 @@ footer p {
   }
 
   .hero-image-main {
-    inset: 0 0 0 8%;
+    right: 0;
+    left: 0;
   }
 
-  .hero-image-detail {
-    left: 0;
-    bottom: -18px;
-    width: 32%;
-    border-width: 7px;
+  .hero-visual::before {
+    right: -8px;
+    left: 14px;
+    transform: translateY(calc(-50% + 12px));
+  }
+
+  .hero-image-main::after {
+    inset: 9px;
+  }
+
+  .hero-image-label {
+    right: 18px;
+    bottom: 18px;
+    padding: 8px 10px;
+    font-size: 0.52rem;
   }
 
   .hero-note {

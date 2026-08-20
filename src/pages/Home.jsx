@@ -1,7 +1,6 @@
 import Collection from "./Collection";
 import ContactSection from "../components/ContactSection";
-import heroShirt from "../assets/shirts/shirt-08.jpg";
-import detailShirt from "../assets/shirts/shirt-02.jpg";
+import heroShirt from "../assets/hero-shirts.png";
 
 function Home({ onSelectShirt }) {
   return (
@@ -28,28 +27,22 @@ function Home({ onSelectShirt }) {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Featured Vyshnavi Enterprises shirts">
+        <div className="hero-visual" aria-label="Featured Vyshnavi Enterprises shirt">
           <div className="hero-image hero-image-main">
             <img
               src={heroShirt}
-              alt="Vyshnavi Enterprises SHIRT-08"
-              width="1200"
-              height="1600"
+              alt="Three neutral-toned shirts hanging on a minimalist clothing rail"
+              width="626"
+              height="417"
               fetchPriority="high"
               decoding="async"
             />
-          </div>
-          <div className="hero-image hero-image-detail">
-            <img
-              src={detailShirt}
-              alt="Vyshnavi Enterprises SHIRT-02"
-              width="1200"
-              height="1600"
-              decoding="async"
-            />
+            <span className="hero-image-label" aria-hidden="true">
+              The everyday edit · 01
+            </span>
           </div>
           <p className="hero-note">
-            The complete edit<br />Thirty-one shirts
+            Considered colour<br />Everyday ease
           </p>
         </div>
       </section>
