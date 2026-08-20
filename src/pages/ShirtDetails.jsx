@@ -3,8 +3,9 @@ function ShirtDetails({ shirt, onBack }) {
     return null;
   }
 
+  const shirtImageUrl = new URL(shirt.image, window.location.origin).href;
   const whatsappMessage = encodeURIComponent(
-    `Hi, I'm interested in ${shirt.name}. Could you share the available sizes, colours and pricing?`
+    `Hi, I'm interested in ${shirt.name}. Could you share the available sizes, colours and pricing?\n\nShirt image: ${shirtImageUrl}`
   );
 
   return (
